@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Default2 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (txKadi.Text=="")
+        {
+            lblDurum.Text = "Kitap Adı Boş Bırakılamaz..!";
+        }
+        else
+        {
+            if (txKYazar.Text=="")
+            {
+                lblDurum.Text = "Yazar Adı Boş Bırakılamaz..!";
+            }
+            else
+            {
+                dtsKitaplar.Insert();
+                lblDurum.Text = "Kitap Kaydı Gerçekleşti..!";
+                txKadi.Text = "";
+                txKYazar.Text = "";
+            }
+        }
+        
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        dtsKitaplar.Delete();
+        lblDurum.Text = "Kitap Başarı ile Silindi..!";
+        txSilBul.Text = "";
+    }
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+       if (txSilBul.Text == "")
+            {
+                lblDurum.Text = "Boş Bırakmayınız..!";
+            }
+
+        
+    }
+}
