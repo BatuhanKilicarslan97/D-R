@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Default2 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label1.Visible = true;
+        if (TextBox1.Text=="")
+	    {
+            Label1.Text = "Alanlar boş geçilemez.";
+	    }
+        else
+        {
+            if (ListBox1.Items.FindByText(TextBox1.Text) == null)
+            {
+                ListBox1.Items.Add(TextBox1.Text);
+                Label1.Text = "ürün listeye eklendi.";
+                Label2.Text = Convert.ToString(ListBox1.Items.Count);
+                
+            }
+            else
+            {
+                Label1.Text = "ürün zaten var";
+            }
+
+        }
+       
+    }
+    protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ListBox1.Items.Remove(ListBox1.SelectedItem);
+        Label2.Text = Convert.ToString(ListBox1.Items.Count);
+        Label1.Text = "";
+    }
+}
