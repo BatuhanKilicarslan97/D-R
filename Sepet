@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Checbox_secilenleri_topla : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        BulletedList1.Items.Clear();
+        int seker = 5;
+        int cikolota = 2;
+        int muzik_cdsı = 2;
+        int kulaklik = 3;
+        int toplam=0;
+        if (CheckBox1.Checked == true)
+        {  toplam = seker+toplam;
+        Label1.Text = "Toplam="+toplam.ToString();
+        BulletedList1.Items.Add("Şeker");
+        }
+
+        if (CheckBox2.Checked == true)
+        { toplam = cikolota + toplam;
+        Label1.Text = "Toplam=" + toplam.ToString();
+        BulletedList1.Items.Add("Çikolata");
+        }
+
+        if (CheckBox3.Checked == true)
+        { toplam = muzik_cdsı + toplam;
+        Label1.Text = "Toplam=" + toplam.ToString();
+        BulletedList1.Items.Add("muzik cdsi");
+        }
+
+        if (CheckBox4.Checked == true)
+        { toplam = kulaklik + toplam;
+        Label1.Text = "Toplam=" + toplam.ToString();
+        BulletedList1.Items.Add("kulaklik");
+        }
+
+        
+
+
+
+
+
+
+
+    }
+}
